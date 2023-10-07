@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native';
-import Home from './src/components/Home/home';
+import { SafeAreaView } from 'react-native';
+import Home from './src/screen/Home/home';
 
 export default function App() {
-  return <Home />
+  return <Home />;
 }
