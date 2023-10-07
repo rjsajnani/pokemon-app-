@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-export const HomeStyles = StyleSheet.create({
+export const Styles = StyleSheet.create({
   text: { fontSize: 14, textAlign: 'center' },
   container: {
     paddingHorizontal: 15,

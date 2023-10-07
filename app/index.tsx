@@ -6,13 +6,13 @@ import {
   ActivityIndicator,
 } from 'react-native';
 
-import { PokemonsList, getPokemons } from '../../api';
-import { HomeStyles as styles } from './home.style';
-import { Card, Text } from '../../components';
+import { Styles as styles } from './index.style';
+import { PokemonsList, getPokemons } from '../src/api';
+import { Card, Text } from '../src/components';
 
 const gap = 10;
 
-export default function Home() {
+export default function App() {
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState<any>([]);
 
