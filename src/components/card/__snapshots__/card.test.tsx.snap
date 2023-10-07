@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> renders correctly 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "black",
+      "borderRadius": 10,
+      "height": 120,
+      "marginVertical": 5,
+      "padding": 10,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "black",
+          "fontSize": 16,
+          "letterSpacing": 0.2,
+          "lineHeight": 24,
+        },
+        {
+          "color": "white",
+        },
+      ]
+    }
+  >
+    Pikachu
+  </Text>
+</View>
+`;

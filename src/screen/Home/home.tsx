@@ -3,7 +3,7 @@ import { View, TouchableOpacity } from 'react-native';
 
 import { PokemonsList, getPokemons } from '../../api';
 import { HomeStyles as styles } from './home.style';
-import { Text } from '../../components/common';
+import { Card, Text } from '../../components';
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
@@ -54,10 +54,7 @@ export default function Home() {
             results.map((pokemon: PokemonsList, index: number) => {
               return (
                 <TouchableOpacity key={index} onPress={() => showDetail()}>
-                  <Text
-                    text={capitalizedString(pokemon.name)}
-                    style={styles.text}
-                  />
+                  <Card name={capitalizedString(pokemon.name)} />
                 </TouchableOpacity>
               );
             })}
