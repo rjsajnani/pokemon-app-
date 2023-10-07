@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 
 import { PokemonsList, getPokemons } from '../../api';
 import { HomeStyles as styles } from './home.style';
-import H1 from '../../components/common/H1';
+import { Text } from '../../components/common';
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
@@ -36,25 +36,28 @@ export default function Home() {
     <View style={styles.container}>
       {loading ? (
         <>
-          <H1 t="React Native Exercise" />
+          <Text text="React Native Exercise" />
           {placeholders.map((_, index) => {
             return (
-              <Text key={index} style={[styles.text, styles.marginTop]}>
-                Loading...
-              </Text>
+              <Text
+                key={index}
+                text=" Loading..."
+                style={[styles.text, styles.marginTop]}
+              />
             );
           })}
         </>
       ) : (
         <>
-          <H1 t="Pokemon List" />
+          <Text text="Pokemon List" presets="header1" />
           {results.length > 0 &&
             results.map((pokemon: PokemonsList, index: number) => {
               return (
                 <TouchableOpacity key={index} onPress={() => showDetail()}>
-                  <Text style={styles.text}>
-                    {capitalizedString(pokemon.name)}
-                  </Text>
+                  <Text
+                    text={capitalizedString(pokemon.name)}
+                    style={styles.text}
+                  />
                 </TouchableOpacity>
               );
             })}
