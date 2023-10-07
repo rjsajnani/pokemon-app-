@@ -1,15 +1,20 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  FlatList,
+  ActivityIndicator,
+} from 'react-native';
 
 import { PokemonsList, getPokemons } from '../../api';
 import { HomeStyles as styles } from './home.style';
 import { Card, Text } from '../../components';
 
+const gap = 10;
+
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState<any>([]);
-
-  const placeholders = useMemo(() => [1, 2, 3, 4, 5], []);
 
   useEffect(() => {
     setLoading(true);
@@ -32,32 +37,34 @@ export default function Home() {
     [],
   );
 
+  const renderItem = ({ item }: { item: PokemonsList }) => {
+    return (
+      <TouchableOpacity onPress={() => showDetail()}>
+        <Card name={capitalizedString(item.name)} />
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <View style={styles.container}>
       {loading ? (
-        <>
-          <Text text="React Native Exercise" />
-          {placeholders.map((_, index) => {
-            return (
-              <Text
-                key={index}
-                text=" Loading..."
-                style={[styles.text, styles.marginTop]}
-              />
-            );
-          })}
-        </>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size={'large'} />
+        </View>
       ) : (
         <>
-          <Text text="Pokemon List" presets="header1" />
-          {results.length > 0 &&
-            results.map((pokemon: PokemonsList, index: number) => {
-              return (
-                <TouchableOpacity key={index} onPress={() => showDetail()}>
-                  <Card name={capitalizedString(pokemon.name)} />
-                </TouchableOpacity>
-              );
-            })}
+          <Text text="Pokemon List" presets="header1" style={styles.title} />
+          {results.length > 0 && (
+            <FlatList
+              renderItem={renderItem}
+              data={results}
+              numColumns={2}
+              keyExtractor={(item) => item.name}
+              showsVerticalScrollIndicator={false}
+              contentContainerStyle={{ gap }}
+              columnWrapperStyle={{ gap }}
+            />
+          )}
         </>
       )}
     </View>
