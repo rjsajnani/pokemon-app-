@@ -18,42 +18,36 @@ Clone this repository and run these commands:
 You can use [ExpoGo](https://docs.expo.dev/get-started/expo-go/) with any iOS or Android device.
 
 
-### Code Quality
+### Run test
 
-The initial codebase was assembled quickly and may contain some technical shortcomings. While addressing and refactoring this tech debt is **not a requirement**, any effort toward improving it will be appreciated.
+`npm run test`
 
-### Guidelines
+Added basic test cases for checking the components render properly
 
-While we **do not expect a fully polished user interface design, the user experience is of utmost importance**. There are no limitations regarding the use of third-party libraries, as a Product Engineer in our team we trust your judgment. Please make your own decisions autonomously. We’ll be happy to understand your reasoning in a later call.
+### Home screen 
 
-## Scope
+The home screen layout is simple and clean.
+- Search bar on top
+- Pokemon list rendering at the bottom
 
-The Product Engineering team has determined that the minimum viable product should include the following features.
+I have added background color to the card based on the pokemon type
 
-### Minimum Viable Product (MVP)
+![Home screen](./assets/readmeImages/home-screen.png)
 
-- **List of Pokemons**: Display a list of Pokemons ordered by their default number. This list should showcase at least the name and the picture of each pokemon.
-- **Pokemon Details**: Allow users to tap on a Pokemon from the list to view more details about it, such as its element, skills, and any other relevant information.
+### Detail screen
 
-### Second Stage Features (Bonus)
+Show pokemon details based on id selected
 
-- **Search Functionality**: Implement an input search feature where users can easily search for pokemons by their names.
+- Show the image
+- Reused the type to add background color to the header
+- Show various types of the pokemon
+- Show basic stats as well 
 
-## Estimated Time
+![Detail screen](./assets/readmeImages/detail-screen.png)
 
-On average, we anticipate that:
 
-- The MVP might take around ~6 hours of work.
-- Including the second stage features ~8 hours of work total.
+##### Note
 
-**Note**: It's essential to prioritize quality over quantity. If you find that you are unable to complete all the features within the given timeframe, please do not spend more than the advised hours. This a practical test and the value of your time is the priority one. Instead, in a separate text file, list out the features or improvements that you would have implemented given more time.
+To add search the pokemon api didn't have an clear way, the method I used is wrong but as we have a small list to search from I implemented this.
 
-## Submission
-
-While it is not mandatory, we would appreciate a brief document attached outlining your design decisions, challenges faced, and any other information you deem essential.
-
-Once you consider is ready, send the HR person who contacted you a link to download the project. **Do not open a pull request in this repository; we want to keep candidates' solutions private.** Thank you in advance.
-
-## Legal notes
-
-All the results obtained from this exercise will be used for recruitment purposes. The company is not authorized to use it, and you own the copyright of this code. Please, remember that this document and its information are confidential and won’t be reproduced or circulated.
+Basically I get all the pokemon available and based on the search query I filter them, while searching you will need to press the enter key so it can call the search function
