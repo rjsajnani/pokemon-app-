@@ -1,15 +1,23 @@
-import React from 'react';
-import { View } from 'react-native';
+import { useEffect, useState } from 'react';
+import { ActivityIndicator, View } from 'react-native';
 import { Header, Stats, Type } from '../../src/components';
 import { Stack, useLocalSearchParams } from 'expo-router';
 import useCapitalizedString from '../../src/hooks/useCapitalizedString';
 import { ScrollView } from 'react-native-gesture-handler';
+import { getPokemonDetailsById } from '../../src/api';
 
 const Details = () => {
-  const [character, setCharacter] = React.useState<any>(null);
-  const [loading, setLoading] = React.useState<boolean>(true);
-  const [error, setError] = React.useState<string>('');
+  const [pokemon, setPokemon] = useState<any>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string>('');
   const { id, name } = useLocalSearchParams();
+
+  useEffect(() => {
+    getPokemonDetailsById(id).then((data) => {
+      setLoading(false);
+      setPokemon(data);
+    });
+  }, []);
 
   const capitalizedString = useCapitalizedString();
 
@@ -23,11 +31,19 @@ const Details = () => {
           },
         }}
       />
-      <Header image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" />
-      <ScrollView>
-        <Type types={[{ slot: 1, name: 'Grass' }]} />
-        <Stats stats={[{ base_stat: 10, stat: { name: 'Hp' } }]} />
-      </ScrollView>
+      {pokemon ? (
+        <>
+          <Header
+            image={pokemon.sprites.other['official-artwork'].front_default}
+          />
+          <ScrollView>
+            <Type types={pokemon.types} />
+            <Stats stats={pokemon.stats} />
+          </ScrollView>
+        </>
+      ) : (
+        <ActivityIndicator />
+      )}
     </View>
   );
 };
