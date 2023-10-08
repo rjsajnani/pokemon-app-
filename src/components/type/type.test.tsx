@@ -5,8 +5,8 @@ import { Type } from './type';
 import { PokemonType } from './type.props';
 
 const dummyType: PokemonType[] = [
-  { slot: 1, name: 'electric' },
-  { slot: 2, name: 'ground' },
+  { slot: 1, type: { name: 'electric', url: 'pokemon1-url' } },
+  { slot: 2, type: { name: 'ground', url: 'pokemon2-url' } },
 ];
 
 describe('<Type />', () => {

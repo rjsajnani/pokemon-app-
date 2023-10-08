@@ -1,6 +1,9 @@
 export interface PokemonType {
   slot: number;
-  name: string;
+  type: {
+    name: string;
+    url: string;
+  };
 }
 
 export type TypeProps = {

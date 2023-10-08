@@ -3,9 +3,11 @@ import { Text } from '../common';
 import { StatsStyle as styles } from './stats.style';
 import { StatsProps as Props } from './stats.props';
 import React from 'react';
+import useCapitalizedString from '../../hooks/useCapitalizedString';
 
 export const Stats: React.FC<Props> = (props) => {
   const { stats } = props;
+  const capitalizedString = useCapitalizedString();
 
   const calculatePercentage = React.useMemo(
     () =>
@@ -26,7 +28,7 @@ export const Stats: React.FC<Props> = (props) => {
           <View key={index} style={styles.powerContainer}>
             <Text
               presets="body2"
-              text={stat.stat.name}
+              text={capitalizedString(stat.stat.name)}
               style={styles.powerText}
             />
             <View style={styles.progressBarContainer}>
