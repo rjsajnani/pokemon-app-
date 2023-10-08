@@ -9,4 +9,11 @@ export const CardStyle = StyleSheet.create({
     width: Dimensions.get('window').width * 0.45,
   },
   text: { color: 'white' },
+  image: {
+    position: 'absolute',
+    bottom: 2,
+    right: 2,
+    width: 80,
+    height: 80,
+  },
 });

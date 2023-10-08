@@ -7,27 +7,69 @@ exports[`<Card /> renders correctly 1`] = `
       "backgroundColor": "black",
       "borderRadius": 10,
       "height": 120,
-      "marginVertical": 5,
       "padding": 10,
+      "width": 337.5,
     }
   }
 >
-  <Text
+  <View
     style={
-      [
-        {
-          "color": "black",
-          "fontSize": 16,
-          "letterSpacing": 0.2,
-          "lineHeight": 24,
-        },
-        {
-          "color": "white",
-        },
-      ]
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
     }
   >
-    Pikachu
-  </Text>
+    <Text
+      style={
+        [
+          {
+            "color": "black",
+            "fontSize": 16,
+            "letterSpacing": 0.2,
+            "lineHeight": 24,
+          },
+          {
+            "color": "white",
+          },
+        ]
+      }
+    >
+      Pikachu
+    </Text>
+    <Text
+      style={
+        [
+          {
+            "color": "black",
+            "fontSize": 16,
+            "letterSpacing": 0.2,
+            "lineHeight": 24,
+          },
+          {
+            "color": "white",
+          },
+        ]
+      }
+    >
+      #002
+    </Text>
+  </View>
+  <Image
+    source={
+      {
+        "uri": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+      }
+    }
+    style={
+      {
+        "bottom": 2,
+        "height": 80,
+        "position": "absolute",
+        "right": 2,
+        "width": 80,
+      }
+    }
+  />
 </View>
 `;
