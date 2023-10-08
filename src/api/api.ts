@@ -1,21 +1,21 @@
 import { POKEMON_URL } from '../constants';
 
-export type PokemonsList = {
+export type PokemonInfo = {
   name: string;
   url: string;
 };
 
 export async function getPokemons(
   nextEndpointURL: string | null,
-): Promise<{ nextUrl: string; pokemonList: PokemonsList[] }> {
+): Promise<{ nextUrl: string; pokemonList: PokemonInfo[] }> {
   try {
     const url = !!nextEndpointURL
       ? nextEndpointURL
       : `${POKEMON_URL}?limit=20&offset=0`;
     const response = await fetch(url);
     const data = await response.json();
-    const pokemonList: PokemonsList[] = data.results.map(
-      (pokemon: PokemonsList) => ({
+    const pokemonList: PokemonInfo[] = data.results.map(
+      (pokemon: PokemonInfo) => ({
         name: pokemon.name,
         url: pokemon.url,
       }),
@@ -57,7 +57,7 @@ export async function getAllPokemons() {
     const url = `${POKEMON_URL}?limit=1000&offset=0`;
     const response = await fetch(url);
     const data = await response.json();
-    return data.results.map((pokemon: PokemonsList) => ({
+    return data.results.map((pokemon: PokemonInfo) => ({
       name: pokemon.name,
       url: pokemon.url,
     }));

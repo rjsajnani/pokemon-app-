@@ -4,7 +4,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useRouter } from 'expo-router';
 import { Card } from '../card';
 import useCapitalizedString from '../../hooks/useCapitalizedString';
-import { Pokemon, PokemonsListProps as Props } from './pokemon-list.props';
+import { Pokemon, PokemonListProps as Props } from './pokemon-list.props';
 
 const gap = 10;
 
@@ -48,7 +48,9 @@ export const PokemonList: React.FC<Props> = (props) => {
       columnWrapperStyle={{ gap }}
       onEndReached={loadMore}
       onEndReachedThreshold={0.1}
-      ListFooterComponent={<ActivityIndicator size="large" color="#AEAEAE" />}
+      ListFooterComponent={
+        isNext ? <ActivityIndicator size="large" color="#AEAEAE" /> : <></>
+      }
     />
   );
 };

@@ -3,7 +3,7 @@ import { View, ActivityIndicator, SafeAreaView, TextInput } from 'react-native';
 
 import { Styles as styles } from './index.style';
 import {
-  PokemonsList,
+  PokemonInfo,
   getAllPokemons,
   getPokemonDetailsByUrl,
   getPokemons,
@@ -32,7 +32,7 @@ export default function App() {
   }, []);
 
   const createPokemonDetails = async (
-    pokemons: PokemonsList[],
+    pokemons: PokemonInfo[],
   ): Promise<PokemonDetails[]> => {
     const pokemonsArray: PokemonDetails[] = [];
     for await (const pokemon of pokemons) {

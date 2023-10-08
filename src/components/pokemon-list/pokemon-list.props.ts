@@ -5,7 +5,7 @@ export type Pokemon = {
   image: string;
 };
 
-export type PokemonsListProps = {
+export type PokemonListProps = {
   pokemons: Pokemon[];
   isNext: boolean;
   loadPokemons: () => void;
