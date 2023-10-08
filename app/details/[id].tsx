@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, View } from 'react-native';
-import { Header, Stats, Type } from '../../src/components';
+import { Error, Header, Stats, Type } from '../../src/components';
 import { Stack, useLocalSearchParams } from 'expo-router';
 import useCapitalizedString from '../../src/hooks/useCapitalizedString';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -13,12 +13,20 @@ const Details = () => {
   const { id, name } = useLocalSearchParams();
 
   useEffect(() => {
-    getPokemonDetailsById(id).then((data) => {
-      setPokemon(data);
-    });
+    getPokemonDetailsById(id)
+      .then((data) => {
+        setPokemon(data);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   }, []);
 
   const capitalizedString = useCapitalizedString();
+
+  if (error) {
+    return <Error showHeader text="Something went wrong" />;
+  }
 
   return (
     <View style={{ flex: 1 }}>

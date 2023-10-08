@@ -8,7 +8,13 @@ import {
   getPokemonDetailsByUrl,
   getPokemons,
 } from '../src/api';
-import { Pokemon, PokemonList, SearchInput, Text } from '../src/components';
+import {
+  Error,
+  Pokemon,
+  PokemonList,
+  SearchInput,
+  Text,
+} from '../src/components';
 
 type PokemonDetails = {
   url: string;
@@ -20,8 +26,10 @@ type PokemonDetails = {
 
 export default function App() {
   const [loading, setLoading] = useState<boolean>(false);
+  const [findingPokemon, setFindingPokemon] = useState<boolean>(true);
   const [nextUrl, setNextUrl] = useState<string | null>(null);
   const [searchText, setSearchText] = useState<string>('');
+  const [error, setError] = useState<any>();
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const [pokemonsToFind, setPokemonsToFind] = useState<Pokemon[]>([]);
 
@@ -61,11 +69,13 @@ export default function App() {
       setLoading(false);
     } catch (error) {
       setLoading(false);
+      setError(error);
       console.error(error);
     }
   };
 
   const findPokemon = async () => {
+    setFindingPokemon(true);
     try {
       let response = await getAllPokemons();
       response = response.filter((pokemon: any) =>
@@ -76,10 +86,10 @@ export default function App() {
       );
 
       setPokemonsToFind(pokemonsArray);
-      setLoading(false);
+      setFindingPokemon(false);
     } catch (error) {
-      setLoading(false);
-      console.error(error);
+      setFindingPokemon(false);
+      setError(error);
     }
   };
 
@@ -87,8 +97,13 @@ export default function App() {
     setSearchText(query);
     if (query === '') {
       setPokemonsToFind([]);
+      setFindingPokemon(true);
     }
   };
+
+  if (error) {
+    return <Error showHeader={false} text="Something went wrong" />;
+  }
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -105,16 +120,23 @@ export default function App() {
               findPokemon={findPokemon}
               searchText={searchText}
             />
-            {pokemons.length > 0 && (
-              <PokemonList
-                pokemons={
-                  searchText.length >= 1 && pokemonsToFind.length >= 1
-                    ? pokemonsToFind
-                    : pokemons
-                }
-                loadPokemons={loadPokemons}
-                isNext={pokemonsToFind.length > 0 ? false : !!nextUrl}
+            {searchText.length > 0 && pokemonsToFind.length <= 0 ? (
+              <Error
+                showHeader={false}
+                text={findingPokemon ? 'Loading...' : 'Pokemon not found'}
               />
+            ) : (
+              pokemons.length > 0 && (
+                <PokemonList
+                  pokemons={
+                    searchText.length >= 1 && pokemonsToFind.length >= 1
+                      ? pokemonsToFind
+                      : pokemons
+                  }
+                  loadPokemons={loadPokemons}
+                  isNext={pokemonsToFind.length > 0 ? false : !!nextUrl}
+                />
+              )
             )}
           </>
         )}
