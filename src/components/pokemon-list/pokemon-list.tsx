@@ -19,13 +19,12 @@ export const PokemonList: React.FC<Props> = (props) => {
   };
 
   const renderItem = ({ item }: { item: Pokemon }) => {
-    console.log(item, 'Item');
     return (
       <TouchableOpacity
         onPress={() => {
           router.push({
             pathname: 'details/id/',
-            params: { id: '1', name: item.name },
+            params: { id: item.id, name: item.name },
           });
         }}
       >
