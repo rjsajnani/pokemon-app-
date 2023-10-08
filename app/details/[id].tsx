@@ -5,16 +5,15 @@ import { Stack, useLocalSearchParams } from 'expo-router';
 import useCapitalizedString from '../../src/hooks/useCapitalizedString';
 import { ScrollView } from 'react-native-gesture-handler';
 import { getPokemonDetailsById } from '../../src/api';
+import { getPokemonTypeColor } from '../../src/constants';
 
 const Details = () => {
   const [pokemon, setPokemon] = useState<any>(null);
-  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
   const { id, name } = useLocalSearchParams();
 
   useEffect(() => {
     getPokemonDetailsById(id).then((data) => {
-      setLoading(false);
       setPokemon(data);
     });
   }, []);
@@ -25,15 +24,20 @@ const Details = () => {
     <View style={{ flex: 1 }}>
       <Stack.Screen
         options={{
-          title: name && capitalizedString(name.toString()),
+          title:
+            name &&
+            `${capitalizedString(name.toString())}- #${id?.padStart(3, '0')}`,
+          headerShadowVisible: false,
           headerStyle: {
-            backgroundColor: 'black',
+            backgroundColor:
+              pokemon && getPokemonTypeColor(pokemon.types[0].type.name),
           },
         }}
       />
       {pokemon ? (
         <>
           <Header
+            backgroundColor={getPokemonTypeColor(pokemon.types[0].type.name)}
             image={pokemon.sprites.other['official-artwork'].front_default}
           />
           <ScrollView>

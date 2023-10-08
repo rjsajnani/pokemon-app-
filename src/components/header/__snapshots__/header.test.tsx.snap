@@ -11,7 +11,7 @@ exports[`<Header /> renders correctly 1`] = `
   <View
     style={
       {
-        "backgroundColor": "black",
+        "backgroundColor": "#A8A77A",
         "borderBottomEndRadius": 300,
         "borderBottomLeftRadius": 300,
         "height": 280,

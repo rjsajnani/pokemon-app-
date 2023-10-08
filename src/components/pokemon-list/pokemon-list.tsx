@@ -29,6 +29,7 @@ export const PokemonList: React.FC<Props> = (props) => {
         }}
       >
         <Card
+          type={item.type}
           image={item.image}
           id={item.id}
           name={capitalizedString(item.name)}

@@ -2,12 +2,7 @@
 
 exports[`<PokemonList /> renders correctly 1`] = `
 <RCTScrollView
-  ListFooterComponent={
-    <ActivityIndicator
-      color="#AEAEAE"
-      size="large"
-    />
-  }
+  ListFooterComponent={<React.Fragment />}
   contentContainerStyle={
     {
       "gap": 10,
@@ -19,18 +14,21 @@ exports[`<PokemonList /> renders correctly 1`] = `
         "id": 1,
         "image": "pokemonImage",
         "name": "pokemon1",
+        "type": "normal",
         "url": "pokemon1-url",
       },
       {
         "id": 2,
         "image": "pokemonImage",
         "name": "pokemon2",
+        "type": "grass",
         "url": "pokemon2-url",
       },
       {
         "id": 3,
         "image": "pokemonImage",
         "name": "pokemon3",
+        "type": "water",
         "url": "pokemon3-url",
       },
     ]
@@ -39,7 +37,7 @@ exports[`<PokemonList /> renders correctly 1`] = `
   getItemCount={[Function]}
   keyExtractor={[Function]}
   onContentSizeChange={[Function]}
-  onEndReached={[MockFunction]}
+  onEndReached={[Function]}
   onEndReachedThreshold={0.1}
   onLayout={[Function]}
   onMomentumScrollBegin={[Function]}
@@ -98,7 +96,7 @@ exports[`<PokemonList /> renders correctly 1`] = `
             <View
               style={
                 {
-                  "backgroundColor": "black",
+                  "backgroundColor": "#A8A77A",
                   "borderRadius": 10,
                   "height": 120,
                   "padding": 10,
@@ -194,7 +192,7 @@ exports[`<PokemonList /> renders correctly 1`] = `
             <View
               style={
                 {
-                  "backgroundColor": "black",
+                  "backgroundColor": "#7AC74C",
                   "borderRadius": 10,
                   "height": 120,
                   "padding": 10,
@@ -309,7 +307,7 @@ exports[`<PokemonList /> renders correctly 1`] = `
             <View
               style={
                 {
-                  "backgroundColor": "black",
+                  "backgroundColor": "#6390F0",
                   "borderRadius": 10,
                   "height": 120,
                   "padding": 10,
@@ -383,12 +381,7 @@ exports[`<PokemonList /> renders correctly 1`] = `
     </View>
     <View
       onLayout={[Function]}
-    >
-      <ActivityIndicator
-        color="#AEAEAE"
-        size="large"
-      />
-    </View>
+    />
   </View>
 </RCTScrollView>
 `;

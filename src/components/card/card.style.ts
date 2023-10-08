@@ -16,4 +16,5 @@ export const CardStyle = StyleSheet.create({
     width: 80,
     height: 80,
   },
+  infoContainer: { flexDirection: 'row', justifyContent: 'space-between' },
 });

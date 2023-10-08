@@ -10,18 +10,21 @@ const dummyPokemonList: Pokemon[] = [
     id: 1,
     name: 'pokemon1',
     image: 'pokemonImage',
+    type: 'normal',
   },
   {
     url: 'pokemon2-url',
     id: 2,
     name: 'pokemon2',
     image: 'pokemonImage',
+    type: 'grass',
   },
   {
     url: 'pokemon3-url',
     id: 3,
     name: 'pokemon3',
     image: 'pokemonImage',
+    type: 'water',
   },
 ];
 

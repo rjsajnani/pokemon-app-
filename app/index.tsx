@@ -14,6 +14,7 @@ type PokemonDetails = {
   url: string;
   id: number;
   name: string;
+  type: string;
   image: string;
 };
 
@@ -41,6 +42,7 @@ export default function App() {
         url: pokemonDetails.species.url,
         id: pokemonDetails.id,
         name: pokemonDetails.name,
+        type: pokemonDetails.types[0].type.name,
         image: pokemonDetails.sprites.other['official-artwork'].front_default,
       });
     }

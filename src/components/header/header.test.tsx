@@ -7,7 +7,10 @@ describe('<Header />', () => {
   let instance: RenderAPI;
   beforeEach(function () {
     instance = render(
-      <Header image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" />,
+      <Header
+        image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+        backgroundColor="#A8A77A"
+      />,
     );
   });
 
