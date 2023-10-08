@@ -3,3 +3,4 @@ export * from './common';
 export * from './header';
 export * from './type';
 export * from './stats';
+export * from './pokemon-list';
