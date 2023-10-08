@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Stats /> renders correctly 1`] = `
+<View
+  style={
+    {
+      "padding": 20,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "color": "black",
+          "fontSize": 20,
+          "fontWeight": "600",
+          "lineHeight": 29,
+        },
+        undefined,
+      ]
+    }
+  >
+    Pokemon Stats
+  </Text>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "paddingVertical": 5,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "black",
+            "fontSize": 14,
+            "letterSpacing": 0.25,
+            "lineHeight": 24,
+          },
+          {
+            "width": "30%",
+          },
+        ]
+      }
+    >
+      HP
+    </Text>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "width": "70%",
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "black",
+              "fontSize": 16,
+              "letterSpacing": 0.2,
+              "lineHeight": 24,
+            },
+            {
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "width": "12%",
+            },
+          ]
+        }
+      >
+        20
+      </Text>
+      <View
+        style={
+          {
+            "backgroundColor": "#dedede",
+            "borderRadius": 20,
+            "height": 5,
+            "overflow": "hidden",
+            "width": 200,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "#ff3e3e",
+              "borderRadius": 20,
+              "height": 5,
+              "width": "20%",
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "paddingVertical": 5,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "black",
+            "fontSize": 14,
+            "letterSpacing": 0.25,
+            "lineHeight": 24,
+          },
+          {
+            "width": "30%",
+          },
+        ]
+      }
+    >
+      Attack
+    </Text>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "width": "70%",
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "black",
+              "fontSize": 16,
+              "letterSpacing": 0.2,
+              "lineHeight": 24,
+            },
+            {
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "width": "12%",
+            },
+          ]
+        }
+      >
+        50
+      </Text>
+      <View
+        style={
+          {
+            "backgroundColor": "#dedede",
+            "borderRadius": 20,
+            "height": 5,
+            "overflow": "hidden",
+            "width": 200,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "#00ac17",
+              "borderRadius": 20,
+              "height": 5,
+              "width": "50%",
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;

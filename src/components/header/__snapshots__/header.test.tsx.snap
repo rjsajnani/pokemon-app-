@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders correctly 1`] = `
+<View
+  style={
+    {
+      "overflow": "hidden",
+    }
+  }
+>
+  <View
+    style={
+      {
+        "backgroundColor": "black",
+        "borderBottomEndRadius": 300,
+        "borderBottomLeftRadius": 300,
+        "height": 280,
+        "position": "absolute",
+        "transform": [
+          {
+            "scaleX": 2,
+          },
+        ],
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "justifyContent": "flex-end",
+        "paddingTop": 80,
+      }
+    }
+  >
+    <Image
+      source={
+        {
+          "uri": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+        }
+      }
+      style={
+        {
+          "height": 250,
+          "width": 250,
+        }
+      }
+    />
+  </View>
+</View>
+`;

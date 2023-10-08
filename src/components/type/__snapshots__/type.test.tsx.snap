@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Type /> renders correctly 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginTop": 25,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "backgroundColor": "black",
+        "borderRadius": 20,
+        "marginHorizontal": 10,
+        "paddingHorizontal": 30,
+        "paddingVertical": 4,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "black",
+            "fontSize": 16,
+            "letterSpacing": 0.2,
+            "lineHeight": 24,
+          },
+          {
+            "color": "white",
+          },
+        ]
+      }
+    >
+      electric
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "backgroundColor": "black",
+        "borderRadius": 20,
+        "marginHorizontal": 10,
+        "paddingHorizontal": 30,
+        "paddingVertical": 4,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "black",
+            "fontSize": 16,
+            "letterSpacing": 0.2,
+            "lineHeight": 24,
+          },
+          {
+            "color": "white",
+          },
+        ]
+      }
+    >
+      ground
+    </Text>
+  </View>
+</View>
+`;
