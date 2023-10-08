@@ -51,3 +51,17 @@ export async function getPokemonDetailsById(id: string | string[] | undefined) {
     throw error;
   }
 }
+
+export async function getAllPokemons() {
+  try {
+    const url = `${POKEMON_URL}?limit=1000&offset=0`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.results.map((pokemon: PokemonsList) => ({
+      name: pokemon.name,
+      url: pokemon.url,
+    }));
+  } catch (error) {
+    throw error;
+  }
+}
