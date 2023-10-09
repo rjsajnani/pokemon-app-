@@ -32,7 +32,10 @@ The home screen layout is simple and clean.
 
 I have added background color to the card based on the pokemon type
 
-![Home screen](./assets/readmeImages/home-screen.png)
+<details closed>
+     <summary>Home Screen </summary>
+    <img src="./assets/readmeImages/home-screen.png" width="50%" height="50%">
+  </details>
 
 ### Detail screen
 
@@ -41,10 +44,12 @@ Show pokemon details based on id selected
 - Show the image
 - Reused the type to add background color to the header
 - Show various types of the pokemon
-- Show basic stats as well 
+- Show basic stats as well
 
-![Detail screen](./assets/readmeImages/detail-screen.png)
-
+ <details closed>
+     <summary>Detail screen</summary>
+    <img src="./assets/readmeImages/detail-screen.png" width="50%" height="50%">
+  </details>
 
 ##### Note
 
