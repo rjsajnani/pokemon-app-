@@ -1,6 +1,6 @@
 ## The Challenge
 
-To build a mobile app using React-Native and [Expo](https://expo.dev/) that lists Pokemons and some details about them. Unfortunately our Product Engineer has required to be on leave and we need you to continue the work. It’s worth remembering that we agreed to keep a clean and effective user experience, ensuring a good performance.
+To build a mobile app using React-Native and [Expo](https://expo.dev/) that lists Pokemons and some details about them.
 
 **API Documentation:** Use the [PokeAPI](https://pokeapi.co/docs/v2) to fetch the Pokemons' data.
 
