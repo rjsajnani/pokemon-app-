@@ -1,10 +1,6 @@
-# Practical Test: React-Native Mobile App
-
 ## The Challenge
 
-Our Product Engineering team conducted some users interviews and concluded that our users enjoy collecting Pokemon. We decided to invest some time building a proof of concept to help us decide if we should do more in this area.
-
-We asked one of our Product Engineers to build a mobile app using React-Native and [Expo](https://expo.dev/) that lists Pokemons and some details about them. Unfortunately our Product Engineer has required to be on leave and we need you to continue the work. It’s worth remembering that we agreed to keep a clean and effective user experience, ensuring a good performance.
+To build a mobile app using React-Native and [Expo](https://expo.dev/) that lists Pokemons and some details about them. Unfortunately our Product Engineer has required to be on leave and we need you to continue the work. It’s worth remembering that we agreed to keep a clean and effective user experience, ensuring a good performance.
 
 **API Documentation:** Use the [PokeAPI](https://pokeapi.co/docs/v2) to fetch the Pokemons' data.
 
@@ -32,7 +28,7 @@ The home screen layout is simple and clean.
 
 I have added background color to the card based on the pokemon type
 
-<details closed>
+<details open> 
      <summary>Home Screen </summary>
     <img src="./assets/readmeImages/home-screen.png" width="50%" height="50%">
   </details>
@@ -46,7 +42,7 @@ Show pokemon details based on id selected
 - Show various types of the pokemon
 - Show basic stats as well
 
- <details closed>
+ <details open>
      <summary>Detail screen</summary>
     <img src="./assets/readmeImages/detail-screen.png" width="50%" height="50%">
   </details>
